@@ -447,10 +447,12 @@ open class FPNTextField: UITextField {
 		if let countryCode = selectedCountry?.code {
 			do {
 				let example = try phoneUtil.getExampleNumber(countryCode.rawValue)
-				let phoneNumber = "+\(example.countryCode.stringValue)\(example.nationalNumber.stringValue)"
-
-				if let inputString = formatter?.inputString(phoneNumber) {
-					placeholder = remove(dialCode: "+\(example.countryCode.stringValue)", in: inputString)
+            	let phoneNumber = "+\(example.countryCode.stringValue)\(example.nationalNumber.stringValue)"
+                if let inputString = formatter?.inputString(phoneNumber) {
+                    if (countryCode.rawValue == "FR"){
+                        inputString = inputString + "0"
+                    }
+                    placeholder = remove(dialCode: "+\(example.countryCode.stringValue)", in: inputString)
 				} else {
 					placeholder = nil
 				}
