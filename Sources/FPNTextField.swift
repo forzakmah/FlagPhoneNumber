@@ -120,12 +120,12 @@ open class FPNTextField: UITextField {
         flagButton.accessibilityLabel = "flagButton"
         flagButton.addTarget(self, action: #selector(displayCountries), for: .touchUpInside)
         flagButton.translatesAutoresizingMaskIntoConstraints = false
-        flagButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        flagButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 3, bottom: 0, right: 3)
     }
 
     private func setupPhoneCodeTextField() {
         //Add right padding to phoneCodeTextField
-        let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 20))
+        let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 3, height: 20))
         phoneCodeTextField.rightView = paddingView
         phoneCodeTextField.rightViewMode = .always
 
