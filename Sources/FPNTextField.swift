@@ -401,11 +401,11 @@ open class FPNTextField: UITextField {
             let fontAttributes = [NSAttributedString.Key.font: font]
             let size = (text as NSString).size(withAttributes: fontAttributes)
 
-            return size.width.rounded(.up)
+            return size.width.rounded(.up) + 5
         } else {
             phoneCodeTextField.sizeToFit()
 
-            return phoneCodeTextField.frame.size.width.rounded(.up)
+            return phoneCodeTextField.frame.size.width.rounded(.up) + 5
         }
     }
 
